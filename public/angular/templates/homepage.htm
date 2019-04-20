@@ -1,0 +1,735 @@
+
+<style type="text/css">
+  .carouselSlider .slick-dots {
+    bottom: -24px;
+  }
+</style>
+<div>
+    <div class="page-header">
+        <!-- Begin Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-transparent  static-top">
+          <a class="navbar-brand" href="#">
+            <img src="assets/img/logo_small_light.png" alt="">
+          </a>
+          <div class="container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="/register">Home
+                    <span class="sr-only">(current)</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Services</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Contact</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <!-- End Navbar -->
+
+        <!-- Begin Searchbox -->
+        <div ng-include="'angular/templates/searchbox.htm'"></div>
+        <!-- End Searchbox -->
+
+        <!-- news -->
+    </div>
+
+    <!-- End header -->
+    <div class="content">
+      <section class="carousels-section bg-grey-bright pt-60 pb-60">
+        <!-- Begin last search secction -->
+        <section id="last_search">
+          <div class="row">
+            <div class="container">
+              <h3 class="section-title"> Your last search </h3>
+              <a class="section-more" href="#"> more</a>
+            </div>
+          </div>
+
+          
+          <div class="row">
+            <div class="container">
+                <slick infinite="true" slides-to-show="4" slides-to-scroll="4" dots = "true" class = "carouselSlider">
+                    <div ng-repeat="car in carsList" class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+                      <div class="card">
+                        <a href="/show_car_detail/{{car.id}}"> 
+                          <img class="card-img-top" ng-src="{{getPictureUrl(car.pictures, 0)}}" alt="image" ></a>
+                        <div class="card-body">
+                          <h4 class="card-title truncate">{{car.name}}</h4>
+
+                          <section class="card-detail">
+                            <div class="mb-0 flex justify-between items-baseline"><h1 class="text-grey-4 leading-sm font-regular text-xs md:text-sm">{{car.model}}</h1></div>
+                            <h2 class="text-base leading-sm truncate text-grey-dark font-bold">{{car.name}}</h2>
+                            <section class="carMain-attributes card-attributesContainer flex flex-wrap w-12/12 pb-10 md:pb-0 searchPageCarMain-attributes">
+                              <div class="icon-date icon line-half"><p class="icon-title"><span></span></p></div>
+                              <div class="icon-mileage icon"><p class="icon-title">{{car.ez}}</p></div>
+                              <div class="icon-fuel icon line-half"><p class="icon-title">{{car.motor}}</p></div>
+                              <div class="icon-gear icon line-half"><p class="icon-title">{{car.gearunit}}</p></div>
+                              <div class="icon-motor icon line-half"><p class="icon-title">Leistung</p>154 PS</div>
+                              <div class="icon-consumption icon line-half"><p class="icon-title">Verbrauch</p>6.5 l / 100 km</div>
+                              <div class="icon-seats icon line-half hidden"><p class="icon-title">Sitze</p>4</div>
+                              <div class="icon-doors icon line-half hidden"><p class="icon-title">Türen</p>3</div>
+                            </section>
+                          </section>
+                        </div>
+                      </div>
+                    </div>
+                  </slick>
+                </div>
+              </div>
+        </section>
+        <!-- End last search section -->
+      </section>
+
+      <section class="carousels-section bg-grey-bright pt-60 pb-60">
+        <!-- Begin last search secction -->
+        <section id="last_search">
+          <div class="row">
+            <div class="container">
+              <h3 class="section-title"> New style cars </h3>
+              <a class="section-more" href="#"> more</a>
+            </div>
+          </div>
+
+          
+          <div class="row">
+            <div class="container">
+                <slick infinite="true" slides-to-show="4" slides-to-scroll="4" dots = "true" class = "carouselSlider">
+                    <div ng-repeat="car in carsList" class="carousel-item col-12 col-sm-6 col-md-4 col-lg-3">
+                      <div class="card">
+                        <a href="/show_car_detail/{{car.id}}"> 
+                          <img class="card-img-top" ng-src="{{getPictureUrl(car.pictures, 0)}}" alt="image" ></a>
+                        <div class="card-body">
+                          <h4 class="card-title truncate">{{car.name}}</h4>
+
+                          <section class="card-detail">
+                            <div class="mb-0 flex justify-between items-baseline"><h1 class="text-grey-4 leading-sm font-regular text-xs md:text-sm">{{car.model}}</h1></div>
+                            <h2 class="text-base leading-sm truncate text-grey-dark font-bold">{{car.name}}</h2>
+                            <section class="carMain-attributes card-attributesContainer flex flex-wrap w-12/12 pb-10 md:pb-0 searchPageCarMain-attributes">
+                              <div class="icon-date icon line-half"><p class="icon-title hidden">Erstzulassung</p>{{car.ez}}</div>
+                              <div class="icon-mileage icon"><p class="icon-title hidden">Kilometerstand</p>{{car.ez}}</div>
+                              <div class="icon-fuel icon line-half"><p class="icon-title hidden">Treibstoff</p>{{car.motor}}</div>
+                              <div class="icon-gear icon line-half"><p class="icon-title hidden">Getriebe</p>{{car.gearunit}}</div>
+                              <div class="icon-motor icon line-half"><p class="icon-title hidden">Leistung</p>154 PS</div>
+                              <div class="icon-consumption icon line-half"><p class="icon-title hidden">Verbrauch</p>6.5 l / 100 km</div>
+                              <div class="icon-seats icon line-half hidden"><p class="icon-title hidden">Sitze</p>4</div>
+                              <div class="icon-doors icon line-half hidden"><p class="icon-title hidden">Türen</p>3</div>
+                            </section>
+                          </section>
+                        </div>
+                      </div>
+                    </div>
+                  </slick>
+                </div>
+              </div>
+        </section>
+        <!-- End last search section -->
+      </section>
+
+      <section class="bg-white">
+       <h1 class="bold text-xl md:text-2xl text-center py-30 lg:py-60">All marks</h1>
+       <section class="brands-container w-12/12 max-w-container mx-auto px-20 md:pr-20 md:pl-20 lg:pr-90 lg:pl-130 pb-60 flex flex flex-wrap items-center text-sm md:text-base bg-white">
+          <div class="pl-10 md:pl-20 lg:pl-40 h-50 md:h-brandContainer w-6/12 md:w-4/12">
+             <a class="brandContainer opacity-60 hover:opacity-100 flex items-center cursor-pointer  pr-20 pl-5 text-grey-4 mt-5 " style="order:0" href="/search_car">
+                <div class="flex items-center w-12/12">
+                   <div class="h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD"><img class="brandContainer-brandIcon_fade_in h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD" src="https://static.carforyou.ch/_next/static/assets/alfa-romeo-c9a76c19131b7fe5ec2a36afd714365c.svg?auto=format" alt="alfa-romeo"></div>
+                   <p class="brand-name capitalize md:leading-sm ml-10 text-sm font-bold">Alfa Romeo<span class="brand-count hidden text-teal text-sm font-regular">525 Autos anzeigen</span></p>
+                </div>
+             </a>
+          </div>
+          <div class="pl-10 md:pl-20 lg:pl-40 h-50 md:h-brandContainer w-6/12 md:w-4/12">
+             <a class="brandContainer opacity-60 hover:opacity-100 flex items-center cursor-pointer  pr-20 pl-5 text-grey-4 mt-5 " style="order:1" href="/search_car/">
+                <div class="flex items-center w-12/12">
+                   <div class="h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD"><img class="brandContainer-brandIcon_fade_in h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD" src="https://static.carforyou.ch/_next/static/assets/alpine-6827ea4da7d7ff5bf681c376de139473.svg?auto=format" alt="alpine"></div>
+                   <p class="brand-name capitalize md:leading-sm ml-10 text-sm font-bold">Alpine<span class="brand-count hidden text-teal text-sm font-regular">40 Autos anzeigen</span></p>
+                </div>
+             </a>
+          </div>
+          <div class="pl-10 md:pl-20 lg:pl-40 h-50 md:h-brandContainer w-6/12 md:w-4/12">
+             <a class="brandContainer opacity-60 hover:opacity-100 flex items-center cursor-pointer  pr-20 pl-5 text-grey-4 mt-5 " style="order:2" href="/search_car/aston-martin">
+                <div class="flex items-center w-12/12">
+                   <div class="h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD"><img class="brandContainer-brandIcon_fade_in h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD" src="https://static.carforyou.ch/_next/static/assets/aston-martin-b27fe6f1fe90a0d72e1c116938e08f7b.svg?auto=format" alt="aston-martin"></div>
+                   <p class="brand-name capitalize md:leading-sm ml-10 text-sm font-bold">Aston Martin<span class="brand-count hidden text-teal text-sm font-regular">80 Autos anzeigen</span></p>
+                </div>
+             </a>
+          </div>
+          <div class="pl-10 md:pl-20 lg:pl-40 h-50 md:h-brandContainer w-6/12 md:w-4/12">
+             <a class="brandContainer opacity-60 hover:opacity-100 flex items-center cursor-pointer  pr-20 pl-5 text-grey-4 mt-5 " style="order:3" href="/search_car/">
+                <div class="flex items-center w-12/12">
+                   <div class="h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD"><img class="brandContainer-brandIcon_fade_in h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD" src="https://static.carforyou.ch/_next/static/assets/audi-6770e0ea71ee21b762b598f2d8332406.svg?auto=format" alt="audi"></div>
+                   <p class="brand-name capitalize md:leading-sm ml-10 text-sm font-bold">Audi<span class="brand-count hidden text-teal text-sm font-regular">2’286 Autos anzeigen</span></p>
+                </div>
+             </a>
+          </div>
+          <div class="pl-10 md:pl-20 lg:pl-40 h-50 md:h-brandContainer w-6/12 md:w-4/12">
+             <a class="brandContainer opacity-60 hover:opacity-100 flex items-center cursor-pointer  pr-20 pl-5 text-grey-4 mt-5 " style="order:4" href="/search_car/">
+                <div class="flex items-center w-12/12">
+                   <div class="h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD"><img class="brandContainer-brandIcon_fade_in h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD" src="https://static.carforyou.ch/_next/static/assets/bentley-260aab84422d9e1c21d176060d644e85.svg?auto=format" alt="bentley"></div>
+                   <p class="brand-name capitalize md:leading-sm ml-10 text-sm font-bold">Bentley<span class="brand-count hidden text-teal text-sm font-regular">90 Autos anzeigen</span></p>
+                </div>
+             </a>
+          </div>
+          <div class="pl-10 md:pl-20 lg:pl-40 h-50 md:h-brandContainer w-6/12 md:w-4/12">
+             <a class="brandContainer opacity-60 hover:opacity-100 flex items-center cursor-pointer  pr-20 pl-5 text-grey-4 mt-5 " style="order:5" href="/search_car/">
+                <div class="flex items-center w-12/12">
+                   <div class="h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD"><img class="brandContainer-brandIcon_fade_in h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD" src="https://static.carforyou.ch/_next/static/assets/bmw-3f2051ec56f84eb31de9aca2c1b03405.svg?auto=format" alt="bmw"></div>
+                   <p class="brand-name capitalize md:leading-sm ml-10 text-sm font-bold">BMW<span class="brand-count hidden text-teal text-sm font-regular">3’067 Autos anzeigen</span></p>
+                </div>
+             </a>
+          </div>
+          <div class="pl-10 md:pl-20 lg:pl-40 h-50 md:h-brandContainer w-6/12 md:w-4/12">
+             <a class="brandContainer opacity-60 hover:opacity-100 flex items-center cursor-pointer  pr-20 pl-5 text-grey-4 mt-5 " style="order:6" href="/search_car/">
+                <div class="flex items-center w-12/12">
+                   <div class="h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD"><img class="brandContainer-brandIcon_fade_in h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD" src="https://static.carforyou.ch/_next/static/assets/bmw-alpina-b08f13f78d1d209cc4848e54eb8aff98.svg?auto=format" alt="bmw-alpina"></div>
+                   <p class="brand-name capitalize md:leading-sm ml-10 text-sm font-bold">BMW Alpina<span class="brand-count hidden text-teal text-sm font-regular">54 Autos anzeigen</span></p>
+                </div>
+             </a>
+          </div>
+          <div class="pl-10 md:pl-20 lg:pl-40 h-50 md:h-brandContainer w-6/12 md:w-4/12">
+             <a class="brandContainer opacity-60 hover:opacity-100 flex items-center cursor-pointer  pr-20 pl-5 text-grey-4 mt-5 " style="order:7" href="/search_car/">
+                <div class="flex items-center w-12/12">
+                   <div class="h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD"><img class="brandContainer-brandIcon_fade_in h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD" src="https://static.carforyou.ch/_next/static/assets/buick-5f7fd831b01e85621173b04f2a36762d.svg?auto=format" alt="buick"></div>
+                   <p class="brand-name capitalize md:leading-sm ml-10 text-sm font-bold">Buick<span class="brand-count hidden text-teal text-sm font-regular">9 Autos anzeigen</span></p>
+                </div>
+             </a>
+          </div>
+          <div class="pl-10 md:pl-20 lg:pl-40 h-50 md:h-brandContainer w-6/12 md:w-4/12">
+             <a class="brandContainer opacity-60 hover:opacity-100 flex items-center cursor-pointer  pr-20 pl-5 text-grey-4 mt-5 " style="order:8" href="/search_car/">
+                <div class="flex items-center w-12/12">
+                   <div class="h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD"><img class="brandContainer-brandIcon_fade_in h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD" src="https://static.carforyou.ch/_next/static/assets/cadillac-64e301932570d3812c156c3b3407e2d7.svg?auto=format" alt="cadillac"></div>
+                   <p class="brand-name capitalize md:leading-sm ml-10 text-sm font-bold">Cadillac<span class="brand-count hidden text-teal text-sm font-regular">82 Autos anzeigen</span></p>
+                </div>
+             </a>
+          </div>
+          <div class="pl-10 md:pl-20 lg:pl-40 h-50 md:h-brandContainer w-6/12 md:w-4/12">
+             <a class="brandContainer opacity-60 hover:opacity-100 flex items-center cursor-pointer  pr-20 pl-5 text-grey-4 mt-5 " style="order:9" href="/search_car/">
+                <div class="flex items-center w-12/12">
+                   <div class="h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD"><img class="brandContainer-brandIcon_fade_in h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD" src="https://static.carforyou.ch/_next/static/assets/caterham-889983ce4b32f4f1ddf6c074dd203873.svg?auto=format" alt="caterham"></div>
+                   <p class="brand-name capitalize md:leading-sm ml-10 text-sm font-bold">Caterham<span class="brand-count hidden text-teal text-sm font-regular">2 Autos anzeigen</span></p>
+                </div>
+             </a>
+          </div>
+          <div class="pl-10 md:pl-20 lg:pl-40 h-50 md:h-brandContainer w-6/12 md:w-4/12">
+             <a class="brandContainer opacity-60 hover:opacity-100 flex items-center cursor-pointer  pr-20 pl-5 text-grey-4 mt-5 " style="order:10" href="/search_car/">
+                <div class="flex items-center w-12/12">
+                   <div class="h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD"><img class="brandContainer-brandIcon_fade_in h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD" src="https://static.carforyou.ch/_next/static/assets/chevrolet-cccff99bd05c869759302fb9b075aee5.svg?auto=format" alt="chevrolet"></div>
+                   <p class="brand-name capitalize md:leading-sm ml-10 text-sm font-bold">Chevrolet<span class="brand-count hidden text-teal text-sm font-regular">225 Autos anzeigen</span></p>
+                </div>
+             </a>
+          </div>
+          <div class="pl-10 md:pl-20 lg:pl-40 h-50 md:h-brandContainer w-6/12 md:w-4/12">
+             <a class="brandContainer opacity-60 hover:opacity-100 flex items-center cursor-pointer  pr-20 pl-5 text-grey-4 mt-5 " style="order:11" href="/search_car/">
+                <div class="flex items-center w-12/12">
+                   <div class="h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD"><img class="brandContainer-brandIcon_fade_in h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD" src="https://static.carforyou.ch/_next/static/assets/chrysler-0088b25f7882449f27020cdc0f36ffb7.svg?auto=format" alt="chrysler"></div>
+                   <p class="brand-name capitalize md:leading-sm ml-10 text-sm font-bold">Chrysler<span class="brand-count hidden text-teal text-sm font-regular">62 Autos anzeigen</span></p>
+                </div>
+             </a>
+          </div>
+          <div class="pl-10 md:pl-20 lg:pl-40 h-50 md:h-brandContainer w-6/12 md:w-4/12">
+             <a class="brandContainer opacity-60 hover:opacity-100 flex items-center cursor-pointer  pr-20 pl-5 text-grey-4 mt-5 " style="order:12" href="/search_car/">
+                <div class="flex items-center w-12/12">
+                   <div class="h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD"><img class="brandContainer-brandIcon_fade_in h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD" src="https://static.carforyou.ch/_next/static/assets/citroen-1e12cdede6f665f286150756f47cb23d.svg?auto=format" alt="citroen"></div>
+                   <p class="brand-name capitalize md:leading-sm ml-10 text-sm font-bold">Citroën<span class="brand-count hidden text-teal text-sm font-regular">693 Autos anzeigen</span></p>
+                </div>
+             </a>
+          </div>
+          <div class="pl-10 md:pl-20 lg:pl-40 h-50 md:h-brandContainer w-6/12 md:w-4/12">
+             <a class="brandContainer opacity-60 hover:opacity-100 flex items-center cursor-pointer  pr-20 pl-5 text-grey-4 mt-5 " style="order:13" href="/search_car/">
+                <div class="flex items-center w-12/12">
+                   <div class="h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD"><img class="brandContainer-brandIcon_fade_in h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD" src="https://static.carforyou.ch/_next/static/assets/dacia-32deaefac386021661c89aa83641b0b7.svg?auto=format" alt="dacia"></div>
+                   <p class="brand-name capitalize md:leading-sm ml-10 text-sm font-bold">Dacia<span class="brand-count hidden text-teal text-sm font-regular">294 Autos anzeigen</span></p>
+                </div>
+             </a>
+          </div>
+          <div class="pl-10 md:pl-20 lg:pl-40 h-50 md:h-brandContainer w-6/12 md:w-4/12">
+             <a class="brandContainer opacity-60 hover:opacity-100 flex items-center cursor-pointer  pr-20 pl-5 text-grey-4 mt-5 " style="order:14" href="/search_car/">
+                <div class="flex items-center w-12/12">
+                   <div class="h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD"><img class="brandContainer-brandIcon_fade_in h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD" src="https://static.carforyou.ch/_next/static/assets/daewoo-67fea39c12069601a319a3efe60ec7f1.svg?auto=format" alt="daewoo"></div>
+                   <p class="brand-name capitalize md:leading-sm ml-10 text-sm font-bold">Daewoo<span class="brand-count hidden text-teal text-sm font-regular">10 Autos anzeigen</span></p>
+                </div>
+             </a>
+          </div>
+          <div class="pl-10 md:pl-20 lg:pl-40 h-50 md:h-brandContainer w-6/12 md:w-4/12">
+             <a class="brandContainer opacity-60 hover:opacity-100 flex items-center cursor-pointer  pr-20 pl-5 text-grey-4 mt-5 " style="order:15" href="/search_car/">
+                <div class="flex items-center w-12/12">
+                   <div class="h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD"><img class="brandContainer-brandIcon_fade_in h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD" src="https://static.carforyou.ch/_next/static/assets/daihatsu-c5dff6d9fb6074b3e3d2e73ab6e8625e.svg?auto=format" alt="daihatsu"></div>
+                   <p class="brand-name capitalize md:leading-sm ml-10 text-sm font-bold">Daihatsu<span class="brand-count hidden text-teal text-sm font-regular">34 Autos anzeigen</span></p>
+                </div>
+             </a>
+          </div>
+          <div class="pl-10 md:pl-20 lg:pl-40 h-50 md:h-brandContainer w-6/12 md:w-4/12">
+             <a class="brandContainer opacity-60 hover:opacity-100 flex items-center cursor-pointer  pr-20 pl-5 text-grey-4 mt-5 " style="order:16" href="/search_car/">
+                <div class="flex items-center w-12/12">
+                   <div class="h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD"><img class="brandContainer-brandIcon_fade_in h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD" src="https://static.carforyou.ch/_next/static/assets/dodge-d968f2165375ecda07856e4fb7dfe71c.svg?auto=format" alt="dodge"></div>
+                   <p class="brand-name capitalize md:leading-sm ml-10 text-sm font-bold">Dodge<span class="brand-count hidden text-teal text-sm font-regular">200 Autos anzeigen</span></p>
+                </div>
+             </a>
+          </div>
+          <div class="pl-10 md:pl-20 lg:pl-40 h-50 md:h-brandContainer w-6/12 md:w-4/12">
+             <a class="brandContainer opacity-60 hover:opacity-100 flex items-center cursor-pointer  pr-20 pl-5 text-grey-4 mt-5 " style="order:17" href="/search_car/">
+                <div class="flex items-center w-12/12">
+                   <div class="h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD"><img class="brandContainer-brandIcon_fade_in h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD" src="https://static.carforyou.ch/_next/static/assets/ds-automobiles-f20ee3469580fa9547710ead68cd3b1d.svg?auto=format" alt="ds-automobiles"></div>
+                   <p class="brand-name capitalize md:leading-sm ml-10 text-sm font-bold">DS Automobiles<span class="brand-count hidden text-teal text-sm font-regular">149 Autos anzeigen</span></p>
+                </div>
+             </a>
+          </div>
+          <div class="pl-10 md:pl-20 lg:pl-40 h-50 md:h-brandContainer w-6/12 md:w-4/12">
+             <a class="brandContainer opacity-60 hover:opacity-100 flex items-center cursor-pointer  pr-20 pl-5 text-grey-4 mt-5 " style="order:18" href="/search_car/">
+                <div class="flex items-center w-12/12">
+                   <div class="h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD"><img class="brandContainer-brandIcon_fade_in h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD" src="https://static.carforyou.ch/_next/static/assets/ferrari-f8fe8eac64013c33466335735ad6397a.svg?auto=format" alt="ferrari"></div>
+                   <p class="brand-name capitalize md:leading-sm ml-10 text-sm font-bold">Ferrari<span class="brand-count hidden text-teal text-sm font-regular">225 Autos anzeigen</span></p>
+                </div>
+             </a>
+          </div>
+          <div class="pl-10 md:pl-20 lg:pl-40 h-50 md:h-brandContainer w-6/12 md:w-4/12">
+             <a class="brandContainer opacity-60 hover:opacity-100 flex items-center cursor-pointer  pr-20 pl-5 text-grey-4 mt-5 " style="order:19" href="/search_car/">
+                <div class="flex items-center w-12/12">
+                   <div class="h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD"><img class="brandContainer-brandIcon_fade_in h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD" src="https://static.carforyou.ch/_next/static/assets/fiat-22f8ae7832f67fd348d9ee91c6c38972.svg?auto=format" alt="fiat"></div>
+                   <p class="brand-name capitalize md:leading-sm ml-10 text-sm font-bold">Fiat<span class="brand-count hidden text-teal text-sm font-regular">1’120 Autos anzeigen</span></p>
+                </div>
+             </a>
+          </div>
+          <div class="pl-10 md:pl-20 lg:pl-40 h-50 md:h-brandContainer w-6/12 md:w-4/12">
+             <a class="brandContainer opacity-60 hover:opacity-100 flex items-center cursor-pointer  pr-20 pl-5 text-grey-4 mt-5 " style="order:20" href="/search_car/">
+                <div class="flex items-center w-12/12">
+                   <div class="h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD"><img class="brandContainer-brandIcon_fade_in h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD" src="https://static.carforyou.ch/_next/static/assets/fisker-520d804e93c4387011fc33adc0cae1df.svg?auto=format" alt="fisker"></div>
+                   <p class="brand-name capitalize md:leading-sm ml-10 text-sm font-bold">Fisker<span class="brand-count hidden text-teal text-sm font-regular">2 Autos anzeigen</span></p>
+                </div>
+             </a>
+          </div>
+          <div class="pl-10 md:pl-20 lg:pl-40 h-50 md:h-brandContainer w-6/12 md:w-4/12">
+             <a class="brandContainer opacity-60 hover:opacity-100 flex items-center cursor-pointer  pr-20 pl-5 text-grey-4 mt-5 " style="order:21" href="/search_car/">
+                <div class="flex items-center w-12/12">
+                   <div class="h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD"><img class="brandContainer-brandIcon_fade_in h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD" src="https://static.carforyou.ch/_next/static/assets/ford-fc668601e14fec317c2e6039e2669cb1.svg?auto=format" alt="ford"></div>
+                   <p class="brand-name capitalize md:leading-sm ml-10 text-sm font-bold">Ford<span class="brand-count hidden text-teal text-sm font-regular">1’527 Autos anzeigen</span></p>
+                </div>
+             </a>
+          </div>
+          <div class="pl-10 md:pl-20 lg:pl-40 h-50 md:h-brandContainer w-6/12 md:w-4/12">
+             <a class="brandContainer opacity-60 hover:opacity-100 flex items-center cursor-pointer  pr-20 pl-5 text-grey-4 mt-5 " style="order:22" href="/search_car/">
+                <div class="flex items-center w-12/12">
+                   <div class="h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD"><img class="brandContainer-brandIcon_fade_in h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD" src="https://static.carforyou.ch/_next/static/assets/gmc-b8ba813dbd17932e36541e3777b742f9.svg?auto=format" alt="gmc"></div>
+                   <p class="brand-name capitalize md:leading-sm ml-10 text-sm font-bold">GMC<span class="brand-count hidden text-teal text-sm font-regular">5 Autos anzeigen</span></p>
+                </div>
+             </a>
+          </div>
+          <div class="pl-10 md:pl-20 lg:pl-40 h-50 md:h-brandContainer w-6/12 md:w-4/12">
+             <a class="brandContainer opacity-60 hover:opacity-100 flex items-center cursor-pointer  pr-20 pl-5 text-grey-4 mt-5 " style="order:23" href="/search_car/">
+                <div class="flex items-center w-12/12">
+                   <div class="h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD"><img class="brandContainer-brandIcon_fade_in h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD" src="https://static.carforyou.ch/_next/static/assets/honda-4de48060ff662bb41bf29c698791808d.svg?auto=format" alt="honda"></div>
+                   <p class="brand-name capitalize md:leading-sm ml-10 text-sm font-bold">Honda<span class="brand-count hidden text-teal text-sm font-regular">344 Autos anzeigen</span></p>
+                </div>
+             </a>
+          </div>
+          <div class="pl-10 md:pl-20 lg:pl-40 h-50 md:h-brandContainer w-6/12 md:w-4/12">
+             <a class="brandContainer opacity-60 hover:opacity-100 flex items-center cursor-pointer  pr-20 pl-5 text-grey-4 mt-5 " style="order:24" href="/search_car/">
+                <div class="flex items-center w-12/12">
+                   <div class="h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD"><img class="brandContainer-brandIcon_fade_in h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD" src="https://static.carforyou.ch/_next/static/assets/hummer-65d7e93ce483a42e37957d412fa57dd8.svg?auto=format" alt="hummer"></div>
+                   <p class="brand-name capitalize md:leading-sm ml-10 text-sm font-bold">Hummer<span class="brand-count hidden text-teal text-sm font-regular">12 Autos anzeigen</span></p>
+                </div>
+             </a>
+          </div>
+          <div class="pl-10 md:pl-20 lg:pl-40 h-50 md:h-brandContainer w-6/12 md:w-4/12">
+             <a class="brandContainer opacity-60 hover:opacity-100 flex items-center cursor-pointer  pr-20 pl-5 text-grey-4 mt-5 " style="order:25" href="/search_car/">
+                <div class="flex items-center w-12/12">
+                   <div class="h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD"><img class="brandContainer-brandIcon_fade_in h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD" src="https://static.carforyou.ch/_next/static/assets/hyundai-1a813a5f0a7a08fb436ac208c61dcb40.svg?auto=format" alt="hyundai"></div>
+                   <p class="brand-name capitalize md:leading-sm ml-10 text-sm font-bold">Hyundai<span class="brand-count hidden text-teal text-sm font-regular">955 Autos anzeigen</span></p>
+                </div>
+             </a>
+          </div>
+          <div class="pl-10 md:pl-20 lg:pl-40 h-50 md:h-brandContainer w-6/12 md:w-4/12">
+             <a class="brandContainer opacity-60 hover:opacity-100 flex items-center cursor-pointer  pr-20 pl-5 text-grey-4 mt-5 " style="order:26" href="/search_car/">
+                <div class="flex items-center w-12/12">
+                   <div class="h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD"><img class="brandContainer-brandIcon_fade_in h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD" src="https://static.carforyou.ch/_next/static/assets/infiniti-5e683a2a106fe9fa8f3631a67e8caa56.svg?auto=format" alt="infiniti"></div>
+                   <p class="brand-name capitalize md:leading-sm ml-10 text-sm font-bold">Infiniti<span class="brand-count hidden text-teal text-sm font-regular">86 Autos anzeigen</span></p>
+                </div>
+             </a>
+          </div>
+          <div class="pl-10 md:pl-20 lg:pl-40 h-50 md:h-brandContainer w-6/12 md:w-4/12">
+             <a class="brandContainer opacity-60 hover:opacity-100 flex items-center cursor-pointer  pr-20 pl-5 text-grey-4 mt-5 " style="order:27" href="/search_car/">
+                <div class="flex items-center w-12/12">
+                   <div class="h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD"><img class="brandContainer-brandIcon_fade_in h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD" src="https://static.carforyou.ch/_next/static/assets/isuzu-6530ffe5b4ce12ae5b13c7d0ae294c9a.svg?auto=format" alt="isuzu"></div>
+                   <p class="brand-name capitalize md:leading-sm ml-10 text-sm font-bold">Isuzu<span class="brand-count hidden text-teal text-sm font-regular">24 Autos anzeigen</span></p>
+                </div>
+             </a>
+          </div>
+          <div class="pl-10 md:pl-20 lg:pl-40 h-50 md:h-brandContainer w-6/12 md:w-4/12">
+             <a class="brandContainer opacity-60 hover:opacity-100 flex items-center cursor-pointer  pr-20 pl-5 text-grey-4 mt-5 " style="order:28" href="/search_car/">
+                <div class="flex items-center w-12/12">
+                   <div class="h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD"><img class="brandContainer-brandIcon_fade_in h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD" src="https://static.carforyou.ch/_next/static/assets/jaguar-46b329d2da62c1a1fdc629034310eb33.svg?auto=format" alt="jaguar"></div>
+                   <p class="brand-name capitalize md:leading-sm ml-10 text-sm font-bold">Jaguar<span class="brand-count hidden text-teal text-sm font-regular">343 Autos anzeigen</span></p>
+                </div>
+             </a>
+          </div>
+          <div class="pl-10 md:pl-20 lg:pl-40 h-50 md:h-brandContainer w-6/12 md:w-4/12">
+             <a class="brandContainer opacity-60 hover:opacity-100 flex items-center cursor-pointer  pr-20 pl-5 text-grey-4 mt-5 " style="order:29" href="/search_car/">
+                <div class="flex items-center w-12/12">
+                   <div class="h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD"><img class="brandContainer-brandIcon_fade_in h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD" src="https://static.carforyou.ch/_next/static/assets/jeep-5ab17e79e3aedaf36edb70a618c45dce.svg?auto=format" alt="jeep"></div>
+                   <p class="brand-name capitalize md:leading-sm ml-10 text-sm font-bold">Jeep<span class="brand-count hidden text-teal text-sm font-regular">662 Autos anzeigen</span></p>
+                </div>
+             </a>
+          </div>
+          <div class="pl-10 md:pl-20 lg:pl-40 h-50 md:h-brandContainer w-6/12 md:w-4/12">
+             <a class="brandContainer opacity-60 hover:opacity-100 flex items-center cursor-pointer  pr-20 pl-5 text-grey-4 mt-5 " style="order:30" href="/search_car/">
+                <div class="flex items-center w-12/12">
+                   <div class="h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD"><img class="brandContainer-brandIcon_fade_in h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD" src="https://static.carforyou.ch/_next/static/assets/kia-d3c4549ff9676b22e54ef2dbad1018b5.svg?auto=format" alt="kia"></div>
+                   <p class="brand-name capitalize md:leading-sm ml-10 text-sm font-bold">Kia<span class="brand-count hidden text-teal text-sm font-regular">426 Autos anzeigen</span></p>
+                </div>
+             </a>
+          </div>
+          <div class="pl-10 md:pl-20 lg:pl-40 h-50 md:h-brandContainer w-6/12 md:w-4/12">
+             <a class="brandContainer opacity-60 hover:opacity-100 flex items-center cursor-pointer  pr-20 pl-5 text-grey-4 mt-5 " style="order:31" href="/search_car/">
+                <div class="flex items-center w-12/12">
+                   <div class="h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD"><img class="brandContainer-brandIcon_fade_in h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD" src="https://static.carforyou.ch/_next/static/assets/ktm-62897bd4d9740e2502ccf79d4db9aefd.svg?auto=format" alt="ktm"></div>
+                   <p class="brand-name capitalize md:leading-sm ml-10 text-sm font-bold">KTM<span class="brand-count hidden text-teal text-sm font-regular">2 Autos anzeigen</span></p>
+                </div>
+             </a>
+          </div>
+          <div class="pl-10 md:pl-20 lg:pl-40 h-50 md:h-brandContainer w-6/12 md:w-4/12">
+             <a class="brandContainer opacity-60 hover:opacity-100 flex items-center cursor-pointer  pr-20 pl-5 text-grey-4 mt-5 " style="order:32" href="/search_car/">
+                <div class="flex items-center w-12/12">
+                   <div class="h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD"><img class="brandContainer-brandIcon_fade_in h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD" src="https://static.carforyou.ch/_next/static/assets/lamborghini-ceb198371b557819e1d5ab458f4ddc00.svg?auto=format" alt="lamborghini"></div>
+                   <p class="brand-name capitalize md:leading-sm ml-10 text-sm font-bold">Lamborghini<span class="brand-count hidden text-teal text-sm font-regular">142 Autos anzeigen</span></p>
+                </div>
+             </a>
+          </div>
+          <div class="pl-10 md:pl-20 lg:pl-40 h-50 md:h-brandContainer w-6/12 md:w-4/12">
+             <a class="brandContainer opacity-60 hover:opacity-100 flex items-center cursor-pointer  pr-20 pl-5 text-grey-4 mt-5 " style="order:33" href="/search_car/">
+                <div class="flex items-center w-12/12">
+                   <div class="h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD"><img class="brandContainer-brandIcon_fade_in h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD" src="https://static.carforyou.ch/_next/static/assets/lancia-a91132313c11447ec09f837b032c84c6.svg?auto=format" alt="lancia"></div>
+                   <p class="brand-name capitalize md:leading-sm ml-10 text-sm font-bold">Lancia<span class="brand-count hidden text-teal text-sm font-regular">55 Autos anzeigen</span></p>
+                </div>
+             </a>
+          </div>
+          <div class="pl-10 md:pl-20 lg:pl-40 h-50 md:h-brandContainer w-6/12 md:w-4/12">
+             <a class="brandContainer opacity-60 hover:opacity-100 flex items-center cursor-pointer  pr-20 pl-5 text-grey-4 mt-5 " style="order:34" href="/search_car/">
+                <div class="flex items-center w-12/12">
+                   <div class="h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD"><img class="brandContainer-brandIcon_fade_in h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD" src="https://static.carforyou.ch/_next/static/assets/land-rover-b8319686299a266d9c06891f11433ea5.svg?auto=format" alt="land-rover"></div>
+                   <p class="brand-name capitalize md:leading-sm ml-10 text-sm font-bold">Land Rover<span class="brand-count hidden text-teal text-sm font-regular">425 Autos anzeigen</span></p>
+                </div>
+             </a>
+          </div>
+          <div class="pl-10 md:pl-20 lg:pl-40 h-50 md:h-brandContainer w-6/12 md:w-4/12">
+             <a class="brandContainer opacity-60 hover:opacity-100 flex items-center cursor-pointer  pr-20 pl-5 text-grey-4 mt-5 " style="order:35" href="/search_car/">
+                <div class="flex items-center w-12/12">
+                   <div class="h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD"><img class="brandContainer-brandIcon_fade_in h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD" src="https://static.carforyou.ch/_next/static/assets/lexus-b7f19e43118dc615b2d70ca301480789.svg?auto=format" alt="lexus"></div>
+                   <p class="brand-name capitalize md:leading-sm ml-10 text-sm font-bold">Lexus<span class="brand-count hidden text-teal text-sm font-regular">55 Autos anzeigen</span></p>
+                </div>
+             </a>
+          </div>
+          <div class="pl-10 md:pl-20 lg:pl-40 h-50 md:h-brandContainer w-6/12 md:w-4/12">
+             <a class="brandContainer opacity-60 hover:opacity-100 flex items-center cursor-pointer  pr-20 pl-5 text-grey-4 mt-5 " style="order:36" href="/search_car/">
+                <div class="flex items-center w-12/12">
+                   <div class="h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD"><img class="brandContainer-brandIcon_fade_in h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD" src="https://static.carforyou.ch/_next/static/assets/lincoln-e740d8264f97195796dc3a8f77f3c2c6.svg?auto=format" alt="lincoln"></div>
+                   <p class="brand-name capitalize md:leading-sm ml-10 text-sm font-bold">Lincoln<span class="brand-count hidden text-teal text-sm font-regular">8 Autos anzeigen</span></p>
+                </div>
+             </a>
+          </div>
+          <div class="pl-10 md:pl-20 lg:pl-40 h-50 md:h-brandContainer w-6/12 md:w-4/12">
+             <a class="brandContainer opacity-60 hover:opacity-100 flex items-center cursor-pointer  pr-20 pl-5 text-grey-4 mt-5 " style="order:37" href="/search_car/">
+                <div class="flex items-center w-12/12">
+                   <div class="h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD"><img class="brandContainer-brandIcon_fade_in h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD" src="https://static.carforyou.ch/_next/static/assets/lotus-0d35af1571ad18dc7316104a8f1341f0.svg?auto=format" alt="lotus"></div>
+                   <p class="brand-name capitalize md:leading-sm ml-10 text-sm font-bold">Lotus<span class="brand-count hidden text-teal text-sm font-regular">46 Autos anzeigen</span></p>
+                </div>
+             </a>
+          </div>
+          <div class="pl-10 md:pl-20 lg:pl-40 h-50 md:h-brandContainer w-6/12 md:w-4/12">
+             <a class="brandContainer opacity-60 hover:opacity-100 flex items-center cursor-pointer  pr-20 pl-5 text-grey-4 mt-5 " style="order:38" href="/search_car/">
+                <div class="flex items-center w-12/12">
+                   <div class="h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD"><img class="brandContainer-brandIcon_fade_in h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD" src="https://static.carforyou.ch/_next/static/assets/maserati-d05bb67a3c8afa1531f2896f77dd8bf2.svg?auto=format" alt="maserati"></div>
+                   <p class="brand-name capitalize md:leading-sm ml-10 text-sm font-bold">Maserati<span class="brand-count hidden text-teal text-sm font-regular">209 Autos anzeigen</span></p>
+                </div>
+             </a>
+          </div>
+          <div class="pl-10 md:pl-20 lg:pl-40 h-50 md:h-brandContainer w-6/12 md:w-4/12">
+             <a class="brandContainer opacity-60 hover:opacity-100 flex items-center cursor-pointer  pr-20 pl-5 text-grey-4 mt-5 " style="order:39" href="/search_car/">
+                <div class="flex items-center w-12/12">
+                   <div class="h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD"><img class="brandContainer-brandIcon_fade_in h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD" src="https://static.carforyou.ch/_next/static/assets/maybach-2f60d8287e065d2ff8688a40a10cfc02.svg?auto=format" alt="maybach"></div>
+                   <p class="brand-name capitalize md:leading-sm ml-10 text-sm font-bold">Maybach<span class="brand-count hidden text-teal text-sm font-regular">5 Autos anzeigen</span></p>
+                </div>
+             </a>
+          </div>
+          <div class="pl-10 md:pl-20 lg:pl-40 h-50 md:h-brandContainer w-6/12 md:w-4/12">
+             <a class="brandContainer opacity-60 hover:opacity-100 flex items-center cursor-pointer  pr-20 pl-5 text-grey-4 mt-5 " style="order:40" href="/search_car/">
+                <div class="flex items-center w-12/12">
+                   <div class="h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD"><img class="brandContainer-brandIcon_fade_in h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD" src="https://static.carforyou.ch/_next/static/assets/mazda-108a547f692bad1e0b81fe45346953e9.svg?auto=format" alt="mazda"></div>
+                   <p class="brand-name capitalize md:leading-sm ml-10 text-sm font-bold">Mazda<span class="brand-count hidden text-teal text-sm font-regular">967 Autos anzeigen</span></p>
+                </div>
+             </a>
+          </div>
+          <div class="pl-10 md:pl-20 lg:pl-40 h-50 md:h-brandContainer w-6/12 md:w-4/12">
+             <a class="brandContainer opacity-60 hover:opacity-100 flex items-center cursor-pointer  pr-20 pl-5 text-grey-4 mt-5 " style="order:41" href="/search_car/">
+                <div class="flex items-center w-12/12">
+                   <div class="h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD"><img class="brandContainer-brandIcon_fade_in h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD" src="https://static.carforyou.ch/_next/static/assets/mclaren-9d73cb93160f0dd5cd9ef835a3305b80.svg?auto=format" alt="mclaren"></div>
+                   <p class="brand-name capitalize md:leading-sm ml-10 text-sm font-bold">McLaren<span class="brand-count hidden text-teal text-sm font-regular">21 Autos anzeigen</span></p>
+                </div>
+             </a>
+          </div>
+          <div class="pl-10 md:pl-20 lg:pl-40 h-50 md:h-brandContainer w-6/12 md:w-4/12">
+             <a class="brandContainer opacity-60 hover:opacity-100 flex items-center cursor-pointer  pr-20 pl-5 text-grey-4 mt-5 " style="order:42" href="/search_car/">
+                <div class="flex items-center w-12/12">
+                   <div class="h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD"><img class="brandContainer-brandIcon_fade_in h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD" src="https://static.carforyou.ch/_next/static/assets/mercedes-benz-cbb839e407ab4ec3ba74da41826587e2.svg?auto=format" alt="mercedes-benz"></div>
+                   <p class="brand-name capitalize md:leading-sm ml-10 text-sm font-bold">Mercedes-Benz<span class="brand-count hidden text-teal text-sm font-regular">3’067 Autos anzeigen</span></p>
+                </div>
+             </a>
+          </div>
+          <div class="pl-10 md:pl-20 lg:pl-40 h-50 md:h-brandContainer w-6/12 md:w-4/12">
+             <a class="brandContainer opacity-60 hover:opacity-100 flex items-center cursor-pointer  pr-20 pl-5 text-grey-4 mt-5 " style="order:43" href="/search_car/">
+                <div class="flex items-center w-12/12">
+                   <div class="h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD"><img class="brandContainer-brandIcon_fade_in h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD" src="https://static.carforyou.ch/_next/static/assets/mg-47fb1877a623a52e87e803e79c0bc5b7.svg?auto=format" alt="mg"></div>
+                   <p class="brand-name capitalize md:leading-sm ml-10 text-sm font-bold">MG<span class="brand-count hidden text-teal text-sm font-regular">22 Autos anzeigen</span></p>
+                </div>
+             </a>
+          </div>
+          <div class="pl-10 md:pl-20 lg:pl-40 h-50 md:h-brandContainer w-6/12 md:w-4/12">
+             <a class="brandContainer opacity-60 hover:opacity-100 flex items-center cursor-pointer  pr-20 pl-5 text-grey-4 mt-5 " style="order:44" href="/search_car/">
+                <div class="flex items-center w-12/12">
+                   <div class="h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD"><img class="brandContainer-brandIcon_fade_in h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD" src="https://static.carforyou.ch/_next/static/assets/mini-bc17317af49ea5bb7a2a8b79edca5ef3.svg?auto=format" alt="mini"></div>
+                   <p class="brand-name capitalize md:leading-sm ml-10 text-sm font-bold">Mini<span class="brand-count hidden text-teal text-sm font-regular">341 Autos anzeigen</span></p>
+                </div>
+             </a>
+          </div>
+          <div class="pl-10 md:pl-20 lg:pl-40 h-50 md:h-brandContainer w-6/12 md:w-4/12">
+             <a class="brandContainer opacity-60 hover:opacity-100 flex items-center cursor-pointer  pr-20 pl-5 text-grey-4 mt-5 " style="order:45" href="/search_car/">
+                <div class="flex items-center w-12/12">
+                   <div class="h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD"><img class="brandContainer-brandIcon_fade_in h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD" src="https://static.carforyou.ch/_next/static/assets/mitsubishi-d6a20a65b4dbfe9bdc2189d3aba62334.svg?auto=format" alt="mitsubishi"></div>
+                   <p class="brand-name capitalize md:leading-sm ml-10 text-sm font-bold">Mitsubishi<span class="brand-count hidden text-teal text-sm font-regular">361 Autos anzeigen</span></p>
+                </div>
+             </a>
+          </div>
+          <div class="pl-10 md:pl-20 lg:pl-40 h-50 md:h-brandContainer w-6/12 md:w-4/12">
+             <a class="brandContainer opacity-60 hover:opacity-100 flex items-center cursor-pointer  pr-20 pl-5 text-grey-4 mt-5 " style="order:46" href="/search_car/">
+                <div class="flex items-center w-12/12">
+                   <div class="h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD"><img class="brandContainer-brandIcon_fade_in h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD" src="https://static.carforyou.ch/_next/static/assets/morgan-ad36429e1eb30ecaf365d07ed0c4b754.svg?auto=format" alt="morgan"></div>
+                   <p class="brand-name capitalize md:leading-sm ml-10 text-sm font-bold">Morgan<span class="brand-count hidden text-teal text-sm font-regular">1 Auto anzeigen</span></p>
+                </div>
+             </a>
+          </div>
+          <div class="pl-10 md:pl-20 lg:pl-40 h-50 md:h-brandContainer w-6/12 md:w-4/12">
+             <a class="brandContainer opacity-60 hover:opacity-100 flex items-center cursor-pointer  pr-20 pl-5 text-grey-4 mt-5 " style="order:47" href="/search_car/">
+                <div class="flex items-center w-12/12">
+                   <div class="h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD"><img class="brandContainer-brandIcon_fade_in h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD" src="https://static.carforyou.ch/_next/static/assets/nissan-4b38c2f21191e006cd6e7e7677fce33f.svg?auto=format" alt="nissan"></div>
+                   <p class="brand-name capitalize md:leading-sm ml-10 text-sm font-bold">Nissan<span class="brand-count hidden text-teal text-sm font-regular">775 Autos anzeigen</span></p>
+                </div>
+             </a>
+          </div>
+          <div class="pl-10 md:pl-20 lg:pl-40 h-50 md:h-brandContainer w-6/12 md:w-4/12">
+             <a class="brandContainer opacity-60 hover:opacity-100 flex items-center cursor-pointer  pr-20 pl-5 text-grey-4 mt-5 " style="order:48" href="/search_car/">
+                <div class="flex items-center w-12/12">
+                   <div class="h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD"><img class="brandContainer-brandIcon_fade_in h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD" src="https://static.carforyou.ch/_next/static/assets/opel-163a0f6ce0af2c4f495fc76896a5816d.svg?auto=format" alt="opel"></div>
+                   <p class="brand-name capitalize md:leading-sm ml-10 text-sm font-bold">Opel<span class="brand-count hidden text-teal text-sm font-regular">2’221 Autos anzeigen</span></p>
+                </div>
+             </a>
+          </div>
+          <div class="pl-10 md:pl-20 lg:pl-40 h-50 md:h-brandContainer w-6/12 md:w-4/12">
+             <a class="brandContainer opacity-60 hover:opacity-100 flex items-center cursor-pointer  pr-20 pl-5 text-grey-4 mt-5 " style="order:49" href="/search_car/">
+                <div class="flex items-center w-12/12">
+                   <div class="h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD"><img class="brandContainer-brandIcon_fade_in h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD" src="https://static.carforyou.ch/_next/static/assets/peugeot-a04818a9a6aa3902b378b3db1bb6b3b3.svg?auto=format" alt="peugeot"></div>
+                   <p class="brand-name capitalize md:leading-sm ml-10 text-sm font-bold">Peugeot<span class="brand-count hidden text-teal text-sm font-regular">1’184 Autos anzeigen</span></p>
+                </div>
+             </a>
+          </div>
+          <div class="pl-10 md:pl-20 lg:pl-40 h-50 md:h-brandContainer w-6/12 md:w-4/12">
+             <a class="brandContainer opacity-60 hover:opacity-100 flex items-center cursor-pointer  pr-20 pl-5 text-grey-4 mt-5 " style="order:50" href="/search_car/">
+                <div class="flex items-center w-12/12">
+                   <div class="h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD"><img class="brandContainer-brandIcon_fade_in h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD" src="https://static.carforyou.ch/_next/static/assets/piaggio-5d180f64492e36332fd001a9b106c417.svg?auto=format" alt="piaggio"></div>
+                   <p class="brand-name capitalize md:leading-sm ml-10 text-sm font-bold">Piaggio<span class="brand-count hidden text-teal text-sm font-regular">1 Auto anzeigen</span></p>
+                </div>
+             </a>
+          </div>
+          <div class="pl-10 md:pl-20 lg:pl-40 h-50 md:h-brandContainer w-6/12 md:w-4/12">
+             <a class="brandContainer opacity-60 hover:opacity-100 flex items-center cursor-pointer  pr-20 pl-5 text-grey-4 mt-5 " style="order:51" href="/search_car/">
+                <div class="flex items-center w-12/12">
+                   <div class="h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD"><img class="brandContainer-brandIcon_fade_in h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD" src="https://static.carforyou.ch/_next/static/assets/pontiac-9c394c08c824eaeabca8b59040ca1ef2.svg?auto=format" alt="pontiac"></div>
+                   <p class="brand-name capitalize md:leading-sm ml-10 text-sm font-bold">Pontiac<span class="brand-count hidden text-teal text-sm font-regular">15 Autos anzeigen</span></p>
+                </div>
+             </a>
+          </div>
+          <div class="pl-10 md:pl-20 lg:pl-40 h-50 md:h-brandContainer w-6/12 md:w-4/12">
+             <a class="brandContainer opacity-60 hover:opacity-100 flex items-center cursor-pointer  pr-20 pl-5 text-grey-4 mt-5 " style="order:52" href="/search_car/">
+                <div class="flex items-center w-12/12">
+                   <div class="h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD"><img class="brandContainer-brandIcon_fade_in h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD" src="https://static.carforyou.ch/_next/static/assets/porsche-798838f04bb8d2b1685f8ab70461b932.svg?auto=format" alt="porsche"></div>
+                   <p class="brand-name capitalize md:leading-sm ml-10 text-sm font-bold">Porsche<span class="brand-count hidden text-teal text-sm font-regular">715 Autos anzeigen</span></p>
+                </div>
+             </a>
+          </div>
+          <div class="pl-10 md:pl-20 lg:pl-40 h-50 md:h-brandContainer w-6/12 md:w-4/12">
+             <a class="brandContainer opacity-60 hover:opacity-100 flex items-center cursor-pointer  pr-20 pl-5 text-grey-4 mt-5 " style="order:53" href="/search_car/">
+                <div class="flex items-center w-12/12">
+                   <div class="h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD"><img class="brandContainer-brandIcon_fade_in h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD" src="https://static.carforyou.ch/_next/static/assets/renault-9aae669cbc0e1829c6a5b781feb4af4a.svg?auto=format" alt="renault"></div>
+                   <p class="brand-name capitalize md:leading-sm ml-10 text-sm font-bold">Renault<span class="brand-count hidden text-teal text-sm font-regular">1’703 Autos anzeigen</span></p>
+                </div>
+             </a>
+          </div>
+          <div class="pl-10 md:pl-20 lg:pl-40 h-50 md:h-brandContainer w-6/12 md:w-4/12">
+             <a class="brandContainer opacity-60 hover:opacity-100 flex items-center cursor-pointer  pr-20 pl-5 text-grey-4 mt-5 " style="order:54" href="/search_car/">
+                <div class="flex items-center w-12/12">
+                   <div class="h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD"><img class="brandContainer-brandIcon_fade_in h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD" src="https://static.carforyou.ch/_next/static/assets/rolls-royce-41fc50a421913d132be667f52d25aaa1.svg?auto=format" alt="rolls-royce"></div>
+                   <p class="brand-name capitalize md:leading-sm ml-10 text-sm font-bold">Rolls Royce<span class="brand-count hidden text-teal text-sm font-regular">39 Autos anzeigen</span></p>
+                </div>
+             </a>
+          </div>
+          <div class="pl-10 md:pl-20 lg:pl-40 h-50 md:h-brandContainer w-6/12 md:w-4/12">
+             <a class="brandContainer opacity-60 hover:opacity-100 flex items-center cursor-pointer  pr-20 pl-5 text-grey-4 mt-5 " style="order:55" href="/search_car/">
+                <div class="flex items-center w-12/12">
+                   <div class="h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD"><img class="brandContainer-brandIcon_fade_in h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD" src="https://static.carforyou.ch/_next/static/assets/rover-1b027f4730e218b3e8c1d2c66baa4ffc.svg?auto=format" alt="rover"></div>
+                   <p class="brand-name capitalize md:leading-sm ml-10 text-sm font-bold">Rover<span class="brand-count hidden text-teal text-sm font-regular">5 Autos anzeigen</span></p>
+                </div>
+             </a>
+          </div>
+          <div class="pl-10 md:pl-20 lg:pl-40 h-50 md:h-brandContainer w-6/12 md:w-4/12">
+             <a class="brandContainer opacity-60 hover:opacity-100 flex items-center cursor-pointer  pr-20 pl-5 text-grey-4 mt-5 " style="order:56" href="/search_car/">
+                <div class="flex items-center w-12/12">
+                   <div class="h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD"><img class="brandContainer-brandIcon_fade_in h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD" src="https://static.carforyou.ch/_next/static/assets/saab-e3d7e1d21814df101ace5b72790b0b31.svg?auto=format" alt="saab"></div>
+                   <p class="brand-name capitalize md:leading-sm ml-10 text-sm font-bold">Saab<span class="brand-count hidden text-teal text-sm font-regular">53 Autos anzeigen</span></p>
+                </div>
+             </a>
+          </div>
+          <div class="pl-10 md:pl-20 lg:pl-40 h-50 md:h-brandContainer w-6/12 md:w-4/12">
+             <a class="brandContainer opacity-60 hover:opacity-100 flex items-center cursor-pointer  pr-20 pl-5 text-grey-4 mt-5 " style="order:57" href="/search_car/">
+                <div class="flex items-center w-12/12">
+                   <div class="h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD"><img class="brandContainer-brandIcon_fade_in h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD" src="https://static.carforyou.ch/_next/static/assets/seat-8dfff1d547e580e52e6ac61fb87527e6.svg?auto=format" alt="seat"></div>
+                   <p class="brand-name capitalize md:leading-sm ml-10 text-sm font-bold">SEAT<span class="brand-count hidden text-teal text-sm font-regular">926 Autos anzeigen</span></p>
+                </div>
+             </a>
+          </div>
+          <div class="pl-10 md:pl-20 lg:pl-40 h-50 md:h-brandContainer w-6/12 md:w-4/12">
+             <a class="brandContainer opacity-60 hover:opacity-100 flex items-center cursor-pointer  pr-20 pl-5 text-grey-4 mt-5 " style="order:58" href="/search_car/">
+                <div class="flex items-center w-12/12">
+                   <div class="h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD"><img class="brandContainer-brandIcon_fade_in h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD" src="https://static.carforyou.ch/_next/static/assets/skoda-ba093d98a8c468f0fa30c0209695fcce.svg?auto=format" alt="skoda"></div>
+                   <p class="brand-name capitalize md:leading-sm ml-10 text-sm font-bold">Skoda<span class="brand-count hidden text-teal text-sm font-regular">1’251 Autos anzeigen</span></p>
+                </div>
+             </a>
+          </div>
+          <div class="pl-10 md:pl-20 lg:pl-40 h-50 md:h-brandContainer w-6/12 md:w-4/12">
+             <a class="brandContainer opacity-60 hover:opacity-100 flex items-center cursor-pointer  pr-20 pl-5 text-grey-4 mt-5 " style="order:59" href="/search_car/">
+                <div class="flex items-center w-12/12">
+                   <div class="h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD"><img class="brandContainer-brandIcon_fade_in h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD" src="https://static.carforyou.ch/_next/static/assets/smart-0c42b55fc8df1eb4f752e228f94d7734.svg?auto=format" alt="smart"></div>
+                   <p class="brand-name capitalize md:leading-sm ml-10 text-sm font-bold">Smart<span class="brand-count hidden text-teal text-sm font-regular">309 Autos anzeigen</span></p>
+                </div>
+             </a>
+          </div>
+          <div class="pl-10 md:pl-20 lg:pl-40 h-50 md:h-brandContainer w-6/12 md:w-4/12">
+             <a class="brandContainer opacity-60 hover:opacity-100 flex items-center cursor-pointer  pr-20 pl-5 text-grey-4 mt-5 " style="order:60" href="/search_car/">
+                <div class="flex items-center w-12/12">
+                   <div class="h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD"><img class="brandContainer-brandIcon_fade_in h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD" src="https://static.carforyou.ch/_next/static/assets/spyker-73dfc855ee0250935ec0cd5a6ea7092b.svg?auto=format" alt="spyker"></div>
+                   <p class="brand-name capitalize md:leading-sm ml-10 text-sm font-bold">Spyker<span class="brand-count hidden text-teal text-sm font-regular">1 Auto anzeigen</span></p>
+                </div>
+             </a>
+          </div>
+          <div class="pl-10 md:pl-20 lg:pl-40 h-50 md:h-brandContainer w-6/12 md:w-4/12">
+             <a class="brandContainer opacity-60 hover:opacity-100 flex items-center cursor-pointer  pr-20 pl-5 text-grey-4 mt-5 " style="order:61" href="/search_car/">
+                <div class="flex items-center w-12/12">
+                   <div class="h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD"><img class="brandContainer-brandIcon_fade_in h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD" src="https://static.carforyou.ch/_next/static/assets/ssangyong-322463ceb4125ab312377529f0069220.svg?auto=format" alt="ssangyong"></div>
+                   <p class="brand-name capitalize md:leading-sm ml-10 text-sm font-bold">SsangYong<span class="brand-count hidden text-teal text-sm font-regular">106 Autos anzeigen</span></p>
+                </div>
+             </a>
+          </div>
+          <div class="pl-10 md:pl-20 lg:pl-40 h-50 md:h-brandContainer w-6/12 md:w-4/12">
+             <a class="brandContainer opacity-60 hover:opacity-100 flex items-center cursor-pointer  pr-20 pl-5 text-grey-4 mt-5 " style="order:62" href="/search_car/">
+                <div class="flex items-center w-12/12">
+                   <div class="h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD"><img class="brandContainer-brandIcon_fade_in h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD" src="https://static.carforyou.ch/_next/static/assets/subaru-c3f30fc4f78339a741fd0f6b4d1b3b40.svg?auto=format" alt="subaru"></div>
+                   <p class="brand-name capitalize md:leading-sm ml-10 text-sm font-bold">Subaru<span class="brand-count hidden text-teal text-sm font-regular">524 Autos anzeigen</span></p>
+                </div>
+             </a>
+          </div>
+          <div class="pl-10 md:pl-20 lg:pl-40 h-50 md:h-brandContainer w-6/12 md:w-4/12">
+             <a class="brandContainer opacity-60 hover:opacity-100 flex items-center cursor-pointer  pr-20 pl-5 text-grey-4 mt-5 " style="order:63" href="/search_car/">
+                <div class="flex items-center w-12/12">
+                   <div class="h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD"><img class="brandContainer-brandIcon_fade_in h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD" src="https://static.carforyou.ch/_next/static/assets/suzuki-a763a597d7da2d0022228f9c8e0317a7.svg?auto=format" alt="suzuki"></div>
+                   <p class="brand-name capitalize md:leading-sm ml-10 text-sm font-bold">Suzuki<span class="brand-count hidden text-teal text-sm font-regular">778 Autos anzeigen</span></p>
+                </div>
+             </a>
+          </div>
+          <div class="pl-10 md:pl-20 lg:pl-40 h-50 md:h-brandContainer w-6/12 md:w-4/12">
+             <a class="brandContainer opacity-60 hover:opacity-100 flex items-center cursor-pointer  pr-20 pl-5 text-grey-4 mt-5 " style="order:64" href="/search_car/">
+                <div class="flex items-center w-12/12">
+                   <div class="h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD"><img class="brandContainer-brandIcon_fade_in h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD" src="https://static.carforyou.ch/_next/static/assets/tata-6420e72be1eb3d9d95d418a2227089d3.svg?auto=format" alt="tata"></div>
+                   <p class="brand-name capitalize md:leading-sm ml-10 text-sm font-bold">Tata<span class="brand-count hidden text-teal text-sm font-regular">2 Autos anzeigen</span></p>
+                </div>
+             </a>
+          </div>
+          <div class="pl-10 md:pl-20 lg:pl-40 h-50 md:h-brandContainer w-6/12 md:w-4/12">
+             <a class="brandContainer opacity-60 hover:opacity-100 flex items-center cursor-pointer  pr-20 pl-5 text-grey-4 mt-5 " style="order:65" href="/search_car/">
+                <div class="flex items-center w-12/12">
+                   <div class="h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD"><img class="brandContainer-brandIcon_fade_in h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD" src="https://static.carforyou.ch/_next/static/assets/tesla-7d800f0a05e7c178aad0a5468598e525.svg?auto=format" alt="tesla"></div>
+                   <p class="brand-name capitalize md:leading-sm ml-10 text-sm font-bold">Tesla<span class="brand-count hidden text-teal text-sm font-regular">21 Autos anzeigen</span></p>
+                </div>
+             </a>
+          </div>
+          <div class="pl-10 md:pl-20 lg:pl-40 h-50 md:h-brandContainer w-6/12 md:w-4/12">
+             <a class="brandContainer opacity-60 hover:opacity-100 flex items-center cursor-pointer  pr-20 pl-5 text-grey-4 mt-5 " style="order:66" href="/search_car/">
+                <div class="flex items-center w-12/12">
+                   <div class="h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD"><img class="brandContainer-brandIcon_fade_in h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD" src="https://static.carforyou.ch/_next/static/assets/toyota-ccc72e02b3f8b0361128ce1a70621f0d.svg?auto=format" alt="toyota"></div>
+                   <p class="brand-name capitalize md:leading-sm ml-10 text-sm font-bold">Toyota<span class="brand-count hidden text-teal text-sm font-regular">1’081 Autos anzeigen</span></p>
+                </div>
+             </a>
+          </div>
+          <div class="pl-10 md:pl-20 lg:pl-40 h-50 md:h-brandContainer w-6/12 md:w-4/12">
+             <a class="brandContainer opacity-60 hover:opacity-100 flex items-center cursor-pointer  pr-20 pl-5 text-grey-4 mt-5 " style="order:67" href="/search_car/">
+                <div class="flex items-center w-12/12">
+                   <div class="h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD"><img class="brandContainer-brandIcon_fade_in h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD" src="https://static.carforyou.ch/_next/static/assets/triumph-628a650d851066c143e2cab291687205.svg?auto=format" alt="triumph"></div>
+                   <p class="brand-name capitalize md:leading-sm ml-10 text-sm font-bold">Triumph<span class="brand-count hidden text-teal text-sm font-regular">5 Autos anzeigen</span></p>
+                </div>
+             </a>
+          </div>
+          <div class="pl-10 md:pl-20 lg:pl-40 h-50 md:h-brandContainer w-6/12 md:w-4/12">
+             <a class="brandContainer opacity-60 hover:opacity-100 flex items-center cursor-pointer  pr-20 pl-5 text-grey-4 mt-5 " style="order:68" href="/search_car/">
+                <div class="flex items-center w-12/12">
+                   <div class="h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD"><img class="brandContainer-brandIcon_fade_in h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD" src="https://static.carforyou.ch/_next/static/assets/tvr-0e894031d2b976e6e6bcaf2aa8cfb3a1.svg?auto=format" alt="tvr"></div>
+                   <p class="brand-name capitalize md:leading-sm ml-10 text-sm font-bold">TVR<span class="brand-count hidden text-teal text-sm font-regular">2 Autos anzeigen</span></p>
+                </div>
+             </a>
+          </div>
+          <div class="pl-10 md:pl-20 lg:pl-40 h-50 md:h-brandContainer w-6/12 md:w-4/12">
+             <a class="brandContainer opacity-60 hover:opacity-100 flex items-center cursor-pointer  pr-20 pl-5 text-grey-4 mt-5 " style="order:69" href="/search_car/">
+                <div class="flex items-center w-12/12">
+                   <div class="h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD"><img class="brandContainer-brandIcon_fade_in h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD" src="https://static.carforyou.ch/_next/static/assets/volvo-f20cb8253964e9e670e3c3f5aba52c7c.svg?auto=format" alt="volvo"></div>
+                   <p class="brand-name capitalize md:leading-sm ml-10 text-sm font-bold">Volvo<span class="brand-count hidden text-teal text-sm font-regular">1’300 Autos anzeigen</span></p>
+                </div>
+             </a>
+          </div>
+          <div class="pl-10 md:pl-20 lg:pl-40 h-50 md:h-brandContainer w-6/12 md:w-4/12">
+             <a class="brandContainer opacity-60 hover:opacity-100 flex items-center cursor-pointer  pr-20 pl-5 text-grey-4 mt-5 " style="order:70" href="/search_car/">
+                <div class="flex items-center w-12/12">
+                   <div class="h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD"><img class="brandContainer-brandIcon_fade_in h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD" src="https://static.carforyou.ch/_next/static/assets/vw-6c0addf57fc672d9fa72c09c01509a57.svg?auto=format" alt="vw"></div>
+                   <p class="brand-name capitalize md:leading-sm ml-10 text-sm font-bold">VW<span class="brand-count hidden text-teal text-sm font-regular">3’126 Autos anzeigen</span></p>
+                </div>
+             </a>
+          </div>
+          <div class="pl-10 md:pl-20 lg:pl-40 h-50 md:h-brandContainer w-6/12 md:w-4/12">
+             <a class="brandContainer opacity-60 hover:opacity-100 flex items-center cursor-pointer  pr-20 pl-5 text-grey-4 mt-5 " style="order:71" href="/search_car/">
+                <div class="flex items-center w-12/12">
+                   <div class="h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD"><img class="brandContainer-brandIcon_fade_in h-brandIcon w-brandIcon md:h-brandIconMD md:w-brandIconMD" src="https://static.carforyou.ch/_next/static/assets/wiesmann-851c56c7611070f9b5856c08e3f6d513.svg?auto=format" alt="wiesmann"></div>
+                   <p class="brand-name capitalize md:leading-sm ml-10 text-sm font-bold">Wiesmann<span class="brand-count hidden text-teal text-sm font-regular">2 Autos anzeigen</span></p>
+                </div>
+             </a>
+          </div>
+       </section>
+</section>
+    </div>
+
+    <footer class="footer-container flex-no-shrink">
+       <div class="flex md:pr-20 text-sm pb-16 md:pb-0 w-250 md:w-400 flex-wrap self-center justify-center leading-md"><a class="text-grey-3 pr-12 block" href="/de/content/general-terms-and-conditions">AGB</a><a class="text-grey-3 pr-12 block" href="/de/content/privacy-statement">Datenschutz</a><a class="text-grey-3 pr-12 block" href="/de/content/impressum">Impressum</a><a class="text-grey-3 pr-12 block" href="/de/content/faq">FAQ</a></div>
+       <p class="flex-grow text-sm text-center md:text-left md:pb-0 text-white font-bold">
+          CAR FOR YOU
+          <span class="text-grey-3 block md:inline-block pl-5 leading-md leading-sm font-regular">
+             ©<!-- -->2019<!-- --> <!-- -->All rights reserved
+          </span>
+       </p>
+    </footer>
+</div>
+
+<script type="text/javascript">
+  $('#carousel-example .carousel-item:first-child').addClass('active');
+</script>

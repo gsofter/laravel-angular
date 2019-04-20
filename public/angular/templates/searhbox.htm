@@ -1,0 +1,93 @@
+<div class="w-12/12 max-w-container mx-auto px-20 mt-10 flex flex-wrap flex-col-reverse lg:flex-row lg:items-center">
+           <div class="w-12/12 lg:w-6/12 z-10">
+              <div class="flex flex-col w-12/12 md:w-12/12 lg:w-485 rounded-10 bg-white border-grey-1 border">
+                 <div class="flex"><label for="Fahrzeugtyp" class="tab-label tab-label_active">Fahrzeugtyp</label><label for="Marke &amp; Modell" class="tab-label">Marke &amp; Modell</label></div>
+                 <div class="mx-20 my-15 bg-white">
+                    <div class="flex flex-wrap">
+                       <label class="block cursor-pointer bodyTypeGroup transition-2 text-sm md:text-base text-grey-3 w-4/12 md:w-4/12" for="filter_bodyType_suv">
+                          <div class="p-10">
+                             <svg viewBox="0 0 128 64" path="icons/suv.svg" width="100%" height="100%" class="h-50 md:h-64">
+                                <path d="M41 47a9 9 0 0 1-9 9 9 9 0 0 1-9-9 9 9 0 0 1 9-9 9 9 0 0 1 9 9zm66 0a9 9 0 0 1-9 9 9 9 0 0 1-9-9 9 9 0 0 1 9-9 9 9 0 0 1 9 9zM76 28c0-1.735 1.803-3.614 2.233-4.038-3.332-1.851-7.074-3.864-8.217-4.379C67.878 18.619 63.407 18 58 18l3.021 10.195C68.455 28.626 75.152 29 76 29v-1zm-36.556-1.083s8.23.496 16.889 1.004v-.001L55 18H41l-3 6 1.444 2.917zm-8.634-3.003C32.653 22.111 36.5 18 36.5 18c-5.72 0-12.671 1.118-14.194 1.634C20.783 20.15 16.328 26 16.328 26H25c1.383 0 3.965-.284 5.81-2.086zm79.663 6.638c1.893 2.042 5.532 5.834 5.532 7.745 0 3.319 0 6.639-.673 7.849C114.742 47.209 109 49 109 49v-2c0-6.075-4.925-11-11-11s-11 4.925-11 11v2H43v-2c0-6.075-4.925-11-11-11s-11 4.925-11 11v1l-7.951-3.301L12 42v-8l1-2v-4l1.46-2.496S17.513 21.411 20 20c-1.114-.52-2-2-2-2s9.016-2 31-2c16.224 0 20.147 1.151 22.931 2.376 2.785 1.225 13.885 7.425 15.408 8.242 5.161.891 16.154 1.669 23.134 3.934z" fill="currentColor" fill-rule="evenodd"></path>
+                             </svg>
+                             <div class="text-center flex justify-center items-center"><input type="checkbox" id="filter_bodyType_suv" class="hidden"><span class="">SUV</span></div>
+                          </div>
+                       </label>
+                       <label class="block cursor-pointer bodyTypeGroup transition-2 text-sm md:text-base text-grey-3 w-4/12 md:w-4/12" for="filter_bodyType_coupe">
+                          <div class="p-10">
+                             <svg viewBox="0 0 128 64" path="icons/coupe.svg" width="100%" height="100%" class="h-50 md:h-64">
+                                <path d="M51.604 36.444L49.64 31.13a.505.505 0 0 1-.019-.063c-2.565.594-4.874 1.332-6.62 1.932 1.08 2.4 4.802 3.164 8.603 3.444zm-1.002-5.593l2.017 5.452a.5.5 0 0 1 .03.206c1.509.08 2.993.1 4.291.134 2.302.06 8.2.325 12.355.354 0 0-.295-.259-.295-.997 0-.365.031-.749.366-1.223.502-.712 1.186-.966 1.355-.884-.11-.07-.223-.142-.339-.218C65.377 30.46 63.613 30 58 30c-2.494 0-5.035.353-7.398.85zM43 49a7 7 0 1 1-14 0 7 7 0 0 1 14 0zm55 0a7 7 0 1 1-14 0 7 7 0 0 1 14 0zm13-2l-1 1v2l1 1v1l-11 1v-4a9 9 0 0 0-18 0v4H45v-4a9 9 0 0 0-18 0v3l-10-2v-3l1-1s-.969-3.744-1-5c-.03 0 2-2 2-2l-1-1h4s20.072-10 37-10c8.794 0 16.923 5.158 23.215 8.694.413.03 11.583.797 16.088 1.961C102.807 39.82 111 46 111 46v1z" fill="currentColor" fill-rule="evenodd"></path>
+                             </svg>
+                             <div class="text-center flex justify-center items-center"><input type="checkbox" id="filter_bodyType_coupe" class="hidden"><span class="">Coupé</span></div>
+                          </div>
+                       </label>
+                       <label class="block cursor-pointer bodyTypeGroup transition-2 text-sm md:text-base text-grey-3 w-4/12 md:w-4/12" for="filter_bodyType_van">
+                          <div class="p-10">
+                             <svg viewBox="0 0 128 64" path="icons/van.svg" width="100%" height="100%" class="h-50 md:h-64">
+                                <path d="M38 47.5a8.5 8.5 0 1 1-17.001-.001A8.5 8.5 0 0 1 38 47.5zm71 0a8.5 8.5 0 1 1-17.001-.001A8.5 8.5 0 0 1 109 47.5zM70 26h22c-.359.062-1-1.327-1-2 0-1.287.183-1.837.732-3.667l-.016-.02s-3.316-2.638-5.063-3.85C84.906 15.251 79.89 12.214 78 12h-8v14zm-27 0h25V12H43v14zm-23 0h20l.934-14H23a1.25 1.25 0 0 0-1.221.958L19 25c-.073.651.345 1.006 1 1zm97.177 9.864C118.21 36.755 119 37 119 37v6l-1.543 3.233-2.246 1.355L111 48v-.5c0-5.799-4.701-10.5-10.5-10.5S90 41.701 90 47.5V49H40v-1.5C40 41.701 35.299 37 29.5 37S19 41.701 19 47.5v.5h-8l-2-1v-2l2-3V29s.498-4.943 2.209-11.36c.995-3.731 1.629-5.077 1.985-6.094C15.394 10.973 16.393 10 17 10h60c4.087 0 8.205 2.845 11.044 4.574 3.28 1.996 12.264 9.412 12.264 9.412l2.068.463s10.518 3.708 11.801 4.813c1.283 1.106 2.786 3.75 3 6.602z" fill="currentColor" fill-rule="evenodd"></path>
+                             </svg>
+                             <div class="text-center flex justify-center items-center"><input type="checkbox" id="filter_bodyType_van" class="hidden"><span class="">Van</span></div>
+                          </div>
+                       </label>
+                       <label class="block cursor-pointer bodyTypeGroup transition-2 text-sm md:text-base text-grey-3 w-4/12 md:w-4/12" for="filter_bodyType_estate">
+                          <div class="p-10">
+                             <svg viewBox="0 0 128 64" path="icons/estate.svg" width="100%" height="100%" class="h-50 md:h-64">
+                                <path d="M64.885 23.974c-.736-.416-1.497-.795-2.06-1.005-.294-.111-.69-.21-1.176-.302.296.3.552.62.718.916 1.004.112 1.855.242 2.518.39zm-3.87-.524c-.51-.533-1.21-1.043-1.472-1.067v-.001C56.947 22.128 53.09 22 48 22c-2.785 0-6.429.245-9.118.537-.467.138-.952.58-1.338 1.025C40.02 23.252 43.176 23 47 23c5.344 0 10.395.137 14.015.45zm-24.874.302c.148-.223.409-.589.747-.962-.442.067-.82.134-1.1.197-.84.192-1.928.76-2.866 1.324a63.258 63.258 0 0 1 3.22-.559zm-5.757 1.032c.541-.391 3.308-2.342 5.181-2.771C37.557 21.557 43.685 21 48 21c8.355 0 13.32.338 15.175 1.03 1.41.528 3.764 1.913 4.61 2.7 3.803 1.08 9.63 3.034 14.372 5.734 6.158 3.507 6.875 3.86 6.875 3.86l1.876-.265s4.538.236 10.579 1.621c6.041 1.384 8.693 2.004 9.96 3.418 1.267 1.415 2.56 4.155 2.56 5.275C114.007 45.492 114 51 114 51l-9 1v-3a9 9 0 0 0-9-9 9 9 0 0 0-9 9v3H45v-3a9 9 0 0 0-9-9 9 9 0 0 0-9 9v2h-3c-1.444 0-9.029-1.618-9.029-1.618L14 48v-5l1-3v-4s.704-1.615 2-3 5.485-5.218 7.96-6.426c-.265-.353-.707-.854-.707-.854s4.063-.61 6.131-.936zM43 49a7 7 0 1 1-14 0 7 7 0 0 1 14 0zm60 0a7 7 0 1 1-14 0 7 7 0 0 1 14 0zM78 34c.075-.99.99-1.902 1.458-2.277-1.872-1.373-4.03-2.619-5.753-3.416C69.123 26.187 65.3 25 60 25l3 9s13.123 1.14 14.7 1.244c.19.014.3.034.3.034s-.075-.286 0-1.278zm-38 0h20s-1.198-6.372-1.549-9c-.876 0-13.382.223-16.44.362L40 34zm-14 0h11l3-8.497s-4.051.245-6.477.561c-2.238.293-4.153.685-4.805 1.067-1.042.609-5.358 3.628-5.919 4.154-.56.526-1.051 1.086-.35 1.366C23.15 32.932 25.264 34 26 34z" fill="currentColor" fill-rule="evenodd"></path>
+                             </svg>
+                             <div class="text-center flex justify-center items-center"><input type="checkbox" id="filter_bodyType_estate" class="hidden"><span class="">Kombi</span></div>
+                          </div>
+                       </label>
+                       <label class="block cursor-pointer bodyTypeGroup transition-2 text-sm md:text-base text-grey-3 w-4/12 md:w-4/12" for="filter_bodyType_saloon">
+                          <div class="p-10">
+                             <svg viewBox="0 0 128 64" path="icons/saloon.svg" width="100%" height="100%" class="h-50 md:h-64">
+                                <path d="M77 32c0-1.364.967-2.246 1.591-2.493-2.371-1.242-4.916-2.509-6.719-3.224-4.498-1.782-9.367-2.215-12.981-2.271l.029.113 2.942 8.617c5.887.102 10.759.127 15.138.258h.26c-.11-.176-.26-.506-.26-1zm-23.5.553c1.196.035 2.353.064 3.477.091l-1.256-8.516-.012-.109c-3.377.049-7.522.226-11.79.73-4.92.58-13.06 6.931-13.06 6.931s8.744.468 22.641.873zm63.965 5.654C118.102 39.161 119 41 119 41v8l-8 3v-3c0-5.523-4.477-10-10-10s-10 4.477-10 10v2H42v-2c0-5.523-4.477-10-10-10s-10 4.477-10 10v1l-9.489-1.052L10 46v-3l2-3v-5l1.59-3.32s1.079 0 5.531-.467c2.474-.259 3.603-.601 3.603-.601s4.027-1.977 8.443-3.779c4.416-1.802 11.037-4.867 23.436-4.867s16.057 1.687 20.685 3.843a2464.212 2464.212 0 0 0 12.773 5.871l1.109.416s6.147.248 14.13 1.307c7.984 1.06 12.399 3.215 14.165 4.804zM109 49a8 8 0 1 1-16 0 8 8 0 0 1 16 0zm-69 0a8 8 0 1 1-16 0 8 8 0 0 1 16 0z" fill="currentColor" fill-rule="evenodd"></path>
+                             </svg>
+                             <div class="text-center flex justify-center items-center"><input type="checkbox" id="filter_bodyType_saloon" class="hidden"><span class="">Limousine</span></div>
+                          </div>
+                       </label>
+                       <label class="block cursor-pointer bodyTypeGroup transition-2 text-sm md:text-base text-grey-3 w-4/12 md:w-4/12" for="filter_bodyType_cabriolet">
+                          <div class="p-10">
+                             <svg viewBox="0 0 128 64" path="icons/cabriolet.svg" width="100%" height="100%" class="h-50 md:h-64">
+                                <path d="M64.638 33.22l-.01-.009-3.686-2.84a1.726 1.726 0 0 1-.272-2.479l.207-.246s2.313.293 7.001 3.028a145.02 145.02 0 0 1 8.5 5.373S77.892 35.423 79 35c2.8.097 15.792 1.324 21.718 3.603C106.645 40.883 110 44 110 44l-1 1v3l-1 1v1c1.14.683 1.611 2 0 2h-6v-3a9 9 0 0 0-18 0v4H47v-4a9 9 0 0 0-18 0v3s-2.064-.439-4.148-.895c-2.084-.456-4.832-2.762-4.832-2.762v-2.07L19 44v-3l2-2v-3s5.365-1.762 13-2c7.295-.228 9.956-.003 10 0l.923-3.22a1.412 1.412 0 0 1 1.77-1.035l.438.128v.002c.926-.755 2.782-.047 2.869 1.125.092 1.23-1.183 3.295-1.183 3.295l.684 1.728.225.447c1.646.302 3.482.53 5.274.53h8.092H63v-1c0-1.457 1.062-2.384 1.638-2.78zM45 49a7 7 0 1 1-14 0 7 7 0 0 1 14 0zm55 0a7 7 0 1 1-14 0 7 7 0 0 1 14 0z" fill="currentColor" fill-rule="evenodd"></path>
+                             </svg>
+                             <div class="text-center flex justify-center items-center"><input type="checkbox" id="filter_bodyType_cabriolet" class="hidden"><span class="">Cabriolet</span></div>
+                          </div>
+                       </label>
+                    </div>
+                    <div class="tab__price-container">
+                       <label class="text-grey-dark block mt-5 font-bold">Preis</label>
+                       <div class="w-12/12 flex"><input type="number" name="priceFrom" step="5000" min="0" max="9999999" placeholder="Min" class="appearance-none filter-input_left rounded-l-2 input_large" value=""><input type="number" name="priceTo" step="5000" min="0" max="9999999" placeholder="Max" class="appearance-none filter-input_right rounded-r-2 input_large" value=""></div>
+                    </div>
+                    <div class="max-w-full flex flex-col mb-15 mt-20"><a class="button button_active button_large font-bold text-sm md:text-base" href="/de/auto/search"><button class="button button_large font-bold text-sm md:text-base"><span class="ml-5">Suchen</span></button></a></div>
+                 </div>
+                 <div class="mx-20 my-15 bg-white hidden">
+                    <div class="relative mb-5">
+                       <div class="w-12/12" aria-labelledby="" role="combobox" aria-expanded="false" aria-haspopup="listbox">
+                          <label class="text-grey-dark font-bold block">
+                             Marke
+                             <div class="mt-5"><input aria-autocomplete="list" aria-labelledby="" autocomplete="off" value="" id="make" spellcheck="false" autocorrect="off" class="input-drop-down_closed input-select w-12/12 rounded-2 input_large cursor-default w-12/12 overflow-hidden" name="make" placeholder="Alle Marken"></div>
+                          </label>
+                       </div>
+                    </div>
+                    <div class="relative mb-5">
+                       <div class="w-12/12" aria-labelledby="" role="combobox" aria-expanded="false" aria-haspopup="listbox">
+                          <label class="text-grey-dark font-bold block">
+                             Modell
+                             <div class="mt-5"><input aria-autocomplete="list" aria-labelledby="" autocomplete="off" value="" id="model" spellcheck="false" autocorrect="off" disabled="" class="input-drop-down_closed input-select w-12/12 rounded-2 input_large cursor-default w-12/12 overflow-hidden dropdown_disabled" name="model" placeholder="Alle Modelle"></div>
+                          </label>
+                       </div>
+                    </div>
+                    <div class="tab__price-container">
+                       <label class="text-grey-dark block mt-5 font-bold">Preis</label>
+                       <div class="w-12/12 flex"><input type="number" name="priceFrom" step="5000" min="0" max="9999999" placeholder="Min" class="appearance-none filter-input_left rounded-l-2 input_large" value=""><input type="number" name="priceTo" step="5000" min="0" max="9999999" placeholder="Max" class="appearance-none filter-input_right rounded-r-2 input_large" value=""></div>
+                    </div>
+                    <div class="max-w-full flex flex-col mb-15 mt-20"><a class="button button_active button_large font-bold text-sm md:text-base" href="/de/auto/search"><button class="button button_large font-bold text-sm md:text-base"><span class="ml-5">Suchen</span></button></a></div>
+                 </div>
+              </div>
+           </div>
+           <div class="w-12/12 lg:w-6/12 lg:pl-20 mt-10 mb-20 lg:mb-0 z-10">
+              <p class="w-250 sm:w-12/12 mx-auto my-0 text-white text-2xl lg:text-4xl font-bold text-center lg:text-left overflow-hidden">
+                Find the
+                 Perfect car.
+              </p>
+           </div>
+        </div>
