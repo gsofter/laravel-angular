@@ -19,5 +19,16 @@ php artisan serve
 ## Live demo
 www.carforyou.ch
 
+
+## Screen shots
+
+### Main page
+
+![screenshot1](/screenshots/1.png)
+
+### Search Page
+![screenshot2](/screenshots/2.png)
+
+
 ## License
 The Laravel framework is open-source software licensed under the [MIT license](https://opensource.org/licenses/MIT).
